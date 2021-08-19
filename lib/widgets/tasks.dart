@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:hitask/Utils.dart';
+import 'package:hitask/pages/task_expanded.dart';
 
 class Tasks extends StatefulWidget {
   final String date = DateTime.now().toLocal().toString();
@@ -13,6 +14,18 @@ class Tasks extends StatefulWidget {
 
 class _TasksState extends State<Tasks> {
   List<int> savedTasks = List<int>.generate(25, (int index) => index);
+
+  void _goToExpandedTask() {
+    Navigator.of(context).push(PageRouteBuilder(
+        transitionDuration: Duration(milliseconds: 500),
+        reverseTransitionDuration: Duration(milliseconds: 500 ),
+        pageBuilder: (context, animation, secAnimaition) {
+          final curvedAnimation =
+              CurvedAnimation(parent: animation, curve: Interval(0, 0.5));
+          return FadeTransition(
+              opacity: curvedAnimation, child: TaskExpanded());
+        }));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +41,7 @@ class _TasksState extends State<Tasks> {
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(8))),
             child: ListTile(
+              onTap: _goToExpandedTask,
               contentPadding: const EdgeInsets.all(8.0),
               title: Text('Task ${savedTasks[index]}'),
               trailing: Text('${widget.date}'),
