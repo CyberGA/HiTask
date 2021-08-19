@@ -89,6 +89,16 @@ class _TasksState extends State<Tasks> {
       case DismissDirection.startToEnd:
         Utils.showSnackBar(context, "Task complete");
         break;
+      case DismissDirection.vertical:
+        break;
+      case DismissDirection.horizontal:
+        break;
+      case DismissDirection.up:
+        break;
+      case DismissDirection.down:
+        break;
+      case DismissDirection.none:
+        break;
     }
   }
 }

@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hitask/pages/completed_tasks.dart';
 import 'package:hitask/pages/create_task.dart';
 import 'package:hitask/pages/home.dart';
-import 'package:hitask/widgets/add_task_btn.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

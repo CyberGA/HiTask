@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hitask/pages/completed_tasks.dart';
-import 'package:hitask/pages/create_task.dart';
 import 'package:hitask/widgets/add_task_btn.dart';
 import 'package:hitask/widgets/colors.dart';
 import 'package:hitask/widgets/tasks.dart';
